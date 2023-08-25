@@ -7,10 +7,6 @@ env:
   PARALLELIZE: "false"
   GO_VERSION: "1.19.12"
 
-defaults:
-  run:
-    shell: bash
-
 on:
   push:
 
@@ -22,6 +18,6 @@ jobs:
               run: |
                 echo $REPO
                 # Exec scripts
-                ls ${GITHUB_WORKSPACE}/scripts
-                
-                for i in `ls ${GITHUB_WORKSPACE}/scripts/*.sh`;do bash "$i";done
+                ls 
+
+                # for i in `ls ${GITHUB_WORKSPACE}/scripts/*.sh`;do bash "$i";done
