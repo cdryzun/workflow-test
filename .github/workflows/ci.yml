@@ -1,7 +1,7 @@
 name: CI
 
 env:
-  REPO: "${{ var.REPO }}"
+  REPO: "${{ vars.REPO }}"
   VERSION: "${{ github.ref_name }}"
   BUILD_PLATFORMS: "linux/amd64,linux/arm64"
   PARALLELIZE: "false"
