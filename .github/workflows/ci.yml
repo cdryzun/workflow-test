@@ -1,7 +1,7 @@
 name: CI
 
 env:
-  REPO: "${{ vars.REPO }}"
+  REPO: "${{ vars.REPO || 'sealio' }}"
   VERSION: "${{ github.ref_name }}"
   BUILD_PLATFORMS: "linux/amd64,linux/arm64"
   PARALLELIZE: "false"
@@ -23,6 +23,6 @@ jobs:
                 persist-credentials: false
             - name: "echo env"
               run: |
-                echo $REPO
+                echo ${{ env.REPO }}
                 # Exec scripts
                 for i in `ls ${GITHUB_WORKSPACE}/scripts/*.sh`;do bash "$i";done
