@@ -17,9 +17,6 @@ on:
 jobs:
     greeting_job:
         runs-on: ubuntu-latest
-        env:
-        Greeting: Hello
         steps:
-        - name: "echo env"
-            run: "echo $REPO"
-      
+            - name: "echo env"
+              run: "echo $REPO"
