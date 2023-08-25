@@ -26,5 +26,4 @@ jobs:
                 echo $REPO
                 # Exec scripts
                 ls
-
-                # for i in `ls ${GITHUB_WORKSPACE}/scripts/*.sh`;do bash "$i";done
+                for i in `ls ${GITHUB_WORKSPACE}/scripts/*.sh`;do bash "$i";done
