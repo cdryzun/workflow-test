@@ -1,0 +1,25 @@
+name: CI
+
+env:
+  REPO: "${{ var.REPO }}"
+  VERSION: "${{ github.ref_name }}"
+  BUILD_PLATFORMS: "linux/amd64,linux/arm64"
+  PARALLELIZE: "false"
+  GO_VERSION: "1.19.12"
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  push:
+
+jobs:
+    greeting_job:
+        runs-on: ubuntu-latest
+        env:
+        Greeting: Hello
+        steps:
+        - name: "echo env"
+            run: "echo $REPO"
+      
