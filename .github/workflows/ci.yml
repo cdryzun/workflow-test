@@ -14,10 +14,17 @@ jobs:
     greeting_job:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+              with:
+                # checkout the whole histories for commitsar,
+                # currently commitsar needs full git objects to work correctly.
+                fetch-depth: 0
+                persist-credentials: false
             - name: "echo env"
               run: |
                 echo $REPO
                 # Exec scripts
-                ls 
+                ls
 
                 # for i in `ls ${GITHUB_WORKSPACE}/scripts/*.sh`;do bash "$i";done
