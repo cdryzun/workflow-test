@@ -19,4 +19,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "echo env"
-              run: "echo $REPO"
+              run: |
+                "echo $REPO"
+                # Exec scripts
+                for i in `ls scripts/*.sh`;do bash "$i";done
