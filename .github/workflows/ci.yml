@@ -20,6 +20,6 @@ jobs:
         steps:
             - name: "echo env"
               run: |
-                "echo $REPO"
+                echo $REPO
                 # Exec scripts
                 for i in `ls scripts/*.sh`;do bash "$i";done
